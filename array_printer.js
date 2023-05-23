@@ -5,7 +5,7 @@
 const prompt = require('prompt-sync')({ sigint: true });
 //
 // let userInput = parseFloat(prompt("What's your chosen number?"));
-let userInput = prompt("What's input?");
+let userInput = prompt("What's your input?");
 let blob = 'I like to samba samba';
 let arrayLibrary = ['test', 'sampling', blob];
 const arrayInput = () => {
