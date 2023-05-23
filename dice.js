@@ -1,12 +1,21 @@
+//  Write an algorithm which throws a dice a given number of time and count the number of time a certain number is received.
+
 const dice = [1, 2, 3, 4, 5, 6];
 let result = [];
+let nbrThrows;
 
-for (let i = 0; i < 3; i++) {
-  // console.log('test');
-  result.push(Math.floor(Math.random() * dice.length) + 1);
-}
-
-console.log(result);
+const throwing = (nbrThrows) => {
+  for (let i = 0; i < nbrThrows; i++) {
+    // console.log('test');
+    result.push(Math.floor(Math.random() * dice.length) + 1);
+  }
+  console.log(result);
+};
+throwing(2);
+// for (let i = 0; i < 3; i++) {
+//   // console.log('test');
+//   result.push(Math.floor(Math.random() * dice.length) + 1);
+// }
 
 // check if equal
 let checker = [0, 0, 0, 0, 0, 0];
