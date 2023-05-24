@@ -3,7 +3,6 @@ let max = tab[0];
 for (let i = 0; i < tab.length; i++) {
   // console.log('elt: ', tab[i]);
   // console.log('elt + 1: ', tab[i + 1]);
-
   if (tab[i] > max) {
     console.log('superior');
     max = tab[i];
