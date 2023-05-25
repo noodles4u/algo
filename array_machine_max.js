@@ -3,55 +3,38 @@
 
 // Required line for prompt-sync, enables prompts in terminal with node
 const prompt = require('prompt-sync')({ sigint: true });
-//
 
-// const highChecker = () => {
-//   for (let i = 0; i < arrayLibrary.length; i++) {
-//     if (arrayLibrary[i] > highNumber) {
-//       highNumber = arrayLibrary[i];
-//     }
-//   }
-//   console.log(highNumber);
-// };
-////
-////
+// 1.ici faire une boucle pour demander les valeurs et les enregistrer dans le tableau numbers
 
-let arrayLibrary = [];
-let userInput;
+let userInput = parseFloat(prompt('What are your numbers?'));
+let numbers = [];
+const userPrompt = () => {
+  // !userInput.length === 0;
 
-const askMachine = () => {
-  let userInput = parseFloat(prompt('What are your numbers?'));
+  while (userInput !== undefined && !isNaN(userInput)) {
+    numbers.push(userInput);
+    userInput = parseFloat(prompt('What are your numbers?'));
+    console.log(numbers);
+  }
+  {
+    console.log('You done fucked up, you can only insert numbers. Try again!');
+  }
+};
 
-  // if (isNaN(userInput) === false) {
-  // if (!userInput || !userInput.length === 0) {
-  //   console.log(arrayLibrary);
-  //   console.log('anything?');
+// 2.definition de la fonction getMaximum qui prend en parametre un tableau d'entiers
 
-  // } else {
-  arrayLibrary.push(userInput);
-  let i;
-  let highNumber = arrayLibrary[0];
-  for (
-    highNumber = i;
-    i < arrayLibrary.length &&
-    !userInput.length === 0 &&
-    isNaN(userInput) === false;
-    i++
-  ) {
-    if (arrayLibrary[i] > highNumber) {
-      highNumber = arrayLibrary[i];
-    } else {
-      console.log(`This is the current max ${highNumber}`);
+const getMaximum = (tab) => {
+  let highNumber = tab[0];
+  for (let i = 0; i < tab.length; i++) {
+    if (tab[i] > highNumber) {
+      highNumber = tab[i];
     }
   }
-  askMachine();
-
-  // } else {
-  //   console.log('You done fucked up, you can only insert numbers. Try again!');
-
-  //   // console.log(arrayLibrary);
-  //   // console.log(highNumber);
-  //   // console.log(`This is the current max ${highNumber}`);
-  // }
+  return highNumber && console.log(`This is the current max ${highNumber}`);
 };
-askMachine();
+
+// 3.appeler la fonction getMaximum(numbers)
+// let numbers = [8, 3, 4, 5, 2]; // tab to test function getMax
+userPrompt();
+console.log(getMaximum(numbers));
+// console.log(userPrompt());
